@@ -162,7 +162,7 @@ class PdfImages:
             ]
 
             if output_format:
-                command[2:2] = '-' + output_format
+                command.insert(1, '-' + output_format)
 
             subprocess.call(command)
 
