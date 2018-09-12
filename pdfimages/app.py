@@ -59,7 +59,7 @@ class PdfImages:
             try:
                 self._toc[tuple(self._title[:recursion+1])] = self.reader.getDestinationPageNumber(outlines)
             except AttributeError:
-                pass
+                self._toc[tuple(self._title[:recursion+1])] = self.reader.getNumPages()
 
         self._toc[('numPages',)] = self.reader.getNumPages()
 
